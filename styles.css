@@ -1,0 +1,179 @@
+:root {
+  --blue: #051622;
+  --lighter-blue: #0a2d45;
+  --lightest-blue: #0b2f47;
+  --turquoise: #1BA098;
+  --beige: #DEB992;
+}
+
+@keyframes navtransition {
+  0% {
+    color: var(--turquoise);
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+@keyframes navtransition2 {
+  0% {
+    color: var(--beige);
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  /*background: linear-gradient(45deg, var(--blue),var(--lighter-blue));*/
+  color: var(--beige);
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  display: block;
+  width: 110%;
+  position: fixed;
+  background-color: var(--blue);
+  filter: drop-shadow(0 5px 5px black);
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  top: 0;
+  /*Might want to get rid of opacity modifier*/
+  opacity: 0.8;
+}
+
+#nav-list {
+  list-style-type: none;
+}
+
+#nav-list li {
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-left: 20px;
+  font-weight: bold;
+  /*filter: drop-shadow(2px 2px 5px black);*/
+  color: var(--turquoise);
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+#nav-list a:hover {
+  animation: navtransition 0.3s 1 linear forwards;
+}
+
+a:active {
+  color: white;
+}
+
+nav {
+  margin-right: 15%;
+}
+
+main {
+  padding: 0;
+  margin-top: 0;
+}
+
+#welcome-section {
+  height: 50vw;
+  margin-top: -66px;
+  padding: 0;
+  background: linear-gradient(45deg, var(--blue),var(--lighter-blue));
+}
+
+#name-title, #name-subtitle {
+  text-align: center;
+}
+
+#name-title {
+  padding-top: 20%;
+  font-size: 43px;
+}
+
+#name-subtitle {
+  margin-top: -30px;
+}
+
+#projects {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--lightest-blue);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#project-img {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 25px;
+  background: linear-gradient(var(--lighter-blue),var(--turquoise));
+  border-radius: 10px;
+}
+
+#project-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+#contact {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--blue);
+}
+
+#contact h1, #contact p {
+  text-align: center;
+}
+
+#contact h1 {
+  margin-bottom: 0;
+}
+
+#contact p {
+  margin-top: 10px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+}
+
+.link p {
+  font-weight: bold;
+}
+
+.link i, .link p {
+  display: inline-block;
+}
+
+.link {
+  margin: 0 10px;
+}
+
+.link a:hover, .project-tile a:hover {
+  animation: navtransition2 0.3s 1 linear forwards;
+}
+
+@media (max-width: 700px) {
+  #navbar {
+    display: none;
+  }
+}
